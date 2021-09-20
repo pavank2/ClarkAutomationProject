@@ -31,7 +31,8 @@ public class SelectPolicyPageSteps extends TestBase {
 
 		if(!selectPolicyHeader.equals("Unsere Empfehlungen für dich"))
 			throw new IllegalStateException("Not on Select Policy Types Page");
-	}	
+	}
+
 	@Then("^Select Policy Type$")
 	public void select_policy() {
 			selectPolicyPage.selectInsurancePolicy();

@@ -25,32 +25,29 @@ public class RecommendationPageSteps extends TestBase {
 	public void user_is_on_Recommendation_Page() throws Throwable {
 		if(!driver.getTitle().contains("Clark"))
 			throw new IllegalStateException();
-		
-		//recommendationPage.selectGender();
 	}
 	
 	@When("^Select Birthday$")
 	public void select_birthday() {
-
 		recommendationPage.selectBirthDay();
 		recommendationPage.clickNext();
+
+		if(!recommendationPage.getGenderPageHeader().isDisplayed())
+			throw new IllegalStateException("Not navigated to Gender page");
 	}
 	
 	@Then("^Select Gender$")
 	public void select_gender() {
-
 		recommendationPage.selectGender();
-		WebElement locationPage = driver.findElement(By.xpath("//span[contains(text(),'Wo wohnst du?')]"));
-		if(!locationPage.isDisplayed())
+
+		if(!recommendationPage.getLocationPageHeader().isDisplayed())
 			throw new IllegalStateException("Not navigated to Location page");
 	}
 	
 	@Then("^Select Location$")
 	public void select_location() {
-
 		recommendationPage.selectLocation();
-		WebElement refinancePage = driver.findElement(By.xpath("//span[contains(text(),'finanzieren')]"));
-		if(!refinancePage.isDisplayed())
+		if(!recommendationPage.getRefinancePageHeader().isDisplayed())
 			throw new IllegalStateException("Not navigated to RefinancePage page");
 	}
 	
@@ -58,8 +55,7 @@ public class RecommendationPageSteps extends TestBase {
 	public void select_refinance() {
 
 		recommendationPage.reFinanceOption();
-		WebElement vehiclePage = driver.findElement(By.xpath("//span[contains(text(),'Besitzt du eines der folgenden Fahrzeuge?')]"));
-		if(!vehiclePage.isDisplayed())
+		if(!recommendationPage.getVehiclePageHeader().isDisplayed())
 			throw new IllegalStateException("Not navigated to Vehicle page");
 	}
 	
@@ -67,24 +63,21 @@ public class RecommendationPageSteps extends TestBase {
 	@Then("^Select Vehicle Ownership$")
 	public void select_vehicle_ownerShip() {
 		recommendationPage.selectVehicleOwnerShip();
-	    WebElement familyPage = driver.findElement(By.xpath("//span[contains(text(),'Wie ist deine Familiensituation?')]"));
-		if(!familyPage.isDisplayed())
+		if(!recommendationPage.getFamilyPageHeader().isDisplayed())
 			throw new IllegalStateException("Not navigated to Family Situation page");
 	}
 	
 	@Then("^Select Family Situation$")
 	public void select_family_situation() {
 		recommendationPage.selectFamilySituation();
-		WebElement childrenPage = driver.findElement(By.xpath("//span[contains(text(),'Hast du Kinder')]"));
-		if(!childrenPage.isDisplayed())
+		if(!recommendationPage.getChildrenPageHeader().isDisplayed())
 			throw new IllegalStateException("Not navigated to children page");
 	}
 	
 	@Then("^Enter Number of Children$")
 	public void enter_number_of_children() {
 		recommendationPage.addChildren();
-		WebElement professionPage = driver.findElement(By.xpath("//span[contains(text(),'Was machst du beruflich')]"));
-		if(!professionPage.isDisplayed())
+		if(!recommendationPage.getProfessionPageHeader().isDisplayed())
 			throw new IllegalStateException("Not navigated to Profession page");
 		
 	}
@@ -92,8 +85,7 @@ public class RecommendationPageSteps extends TestBase {
 	@Then("^Select Profession$")
 	public void select_profession() {
 		recommendationPage.selectProfession();
-		WebElement freeTimePage = driver.findElement(By.xpath("//span[contains(text(),'deiner Freizeit')]"));
-		if(!freeTimePage.isDisplayed())
+		if(!recommendationPage.getFreeTimePageHeader().isDisplayed())
 			throw new IllegalStateException("Not navigated to Free time page");
 		
 	}
@@ -102,8 +94,7 @@ public class RecommendationPageSteps extends TestBase {
 	@Then("^Select Free Time Options$")
 	public void select_free_time_options() {
 		recommendationPage.selectFreeTimeOptions();
-		WebElement animalsPage = driver.findElement(By.xpath("//span[contains(text(),'Hast du Tiere?')]"));
-		if(!animalsPage.isDisplayed())
+		if(!recommendationPage.getAnimalsPageHeader().isDisplayed())
 			throw new IllegalStateException("Not navigated to Animals page");
 		
 	}
@@ -111,8 +102,7 @@ public class RecommendationPageSteps extends TestBase {
 	@Then("^Select Animals$")
 	public void select_animals() {
 		recommendationPage.selectAnimals();
-		WebElement salaryPage = driver.findElement(By.xpath("//span[contains(text(),'Jahresbruttogehalt?')]"));
-		if(!salaryPage.isDisplayed())
+		if(!recommendationPage.getSalaryPageHeader().isDisplayed())
 			throw new IllegalStateException("Not navigated to Salary page");
 		
 	}

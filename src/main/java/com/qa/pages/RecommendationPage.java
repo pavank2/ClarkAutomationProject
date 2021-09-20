@@ -1,5 +1,4 @@
 package com.qa.pages;
-
 import java.util.List;
 
 import com.qa.factory.DriverFactory;
@@ -53,6 +52,36 @@ public class RecommendationPage extends TestBase {
 	@FindBy(css="button[data-test-button-appearance='primary']")
 	WebElement saveBtn;
 
+	@FindBy(xpath="//span[contains(text(),'Wo wohnst du?')]")
+	WebElement locationPageHeader;
+
+	@FindBy(xpath="//span[contains(text(),'finanzieren')]")
+	WebElement refinancePageHeader;
+
+	@FindBy(xpath="//span[contains(text(),'folgenden Fahrzeuge?')]")
+	WebElement vehiclePageHeader;
+
+	@FindBy(xpath="//span[contains(text(),'Familiensituation')]")
+	WebElement familyPageHeader;
+
+	@FindBy(xpath="//span[contains(text(),'Hast du Kinder')]")
+	WebElement childrenPageHeader;
+
+	@FindBy(xpath="//span[contains(text(),'Was machst du beruflich')]")
+	WebElement professionPageHeader;
+
+	@FindBy(xpath="//span[contains(text(),'deiner Freizeit')]")
+	WebElement freeTimePageHeader;
+
+	@FindBy(xpath="//span[contains(text(),'Hast du Tiere?')]")
+	WebElement animalsPageHeader;
+
+	@FindBy(xpath="//span[contains(text(),'Jahresbruttogehalt')]")
+	WebElement salaryPageHeader;
+
+	@FindBy(xpath="//span[contains(text(),'Was ist dein Geschlecht?')]")
+	WebElement genderPageHeader;
+
 	/********************************************************************************************/
 
 	public RecommendationPage() {
@@ -61,6 +90,11 @@ public class RecommendationPage extends TestBase {
 
 	public void selectBirthDay()  {
 
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].click()", datePicker);
 		TestUtil.selectCalendarElement(years,"1985");
@@ -131,5 +165,42 @@ public class RecommendationPage extends TestBase {
 		return new RegisterPage();
 	}
 
+	public WebElement getLocationPageHeader(){
+		return locationPageHeader;
+	}
+	public WebElement getRefinancePageHeader() {
+		return refinancePageHeader;
+	}
 
+	public WebElement getVehiclePageHeader() {
+		return vehiclePageHeader;
+	}
+
+	public WebElement getFamilyPageHeader() {
+		return familyPageHeader;
+	}
+
+	public WebElement getChildrenPageHeader() {
+		return childrenPageHeader;
+	}
+
+	public WebElement getProfessionPageHeader() {
+		return professionPageHeader;
+	}
+
+	public WebElement getFreeTimePageHeader() {
+		return freeTimePageHeader;
+	}
+
+	public WebElement getAnimalsPageHeader() {
+		return animalsPageHeader;
+	}
+
+	public WebElement getSalaryPageHeader() {
+		return salaryPageHeader;
+	}
+
+	public WebElement getGenderPageHeader() {
+		return genderPageHeader;
+	}
 }

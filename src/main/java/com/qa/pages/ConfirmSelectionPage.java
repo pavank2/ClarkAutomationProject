@@ -37,6 +37,8 @@ public class ConfirmSelectionPage extends TestBase {
 	@FindBy(xpath="//div[contains(@class,'reward-screen')]")
 	WebElement confirmationScreen;
 
+/*******************************************************************************/
+
 	public ConfirmSelectionPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -46,17 +48,14 @@ public class ConfirmSelectionPage extends TestBase {
 		WebElement natureOfPolicy = driver.findElement(By.xpath("//div[@data-cucumber-category-selection-quick-option='Privathaftpflicht']"));
 		driver.findElement(By.xpath("//div[@data-cucumber-category-selection-quick-option='Privathaftpflicht']")).click();
 		TestUtil.clickStaleElement(selectedCompany);
-
-
 	}
 
-
 	public void selectCompany() {
-		//Maybe a bug, this selection is a workaround to get category types
-
+		//This is a bug, this selection is a workaround to get category types
 		WebElement dummyClick = driver.findElement(By.xpath("//*[text()='ACE']"));
 		TestUtil.clickStaleElement(dummyClick);
 	}
+
 	public void confirm() {
 		confirmSelection.click();
 	}

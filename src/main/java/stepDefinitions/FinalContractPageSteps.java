@@ -14,18 +14,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class FinalContractPageSteps {
-FinalContractsPage finalContractsPage = new FinalContractsPage();
-	
-@Given("^User is on Final Contracts Page$")	
-public void verify_user_is_on_contracts_page() {
+	FinalContractsPage finalContractsPage = new FinalContractsPage();
 
-	if(!finalContractsPage.getFinalContractsPageHeader().isDisplayed())
-		throw new IllegalStateException("Not on the correct Page");
-	
-}
+	@Given("^User is on Final Contracts Page$")
+	public void verify_user_is_on_contracts_page() {
 
-@Then("Verify Policy Details {string} and {string}")
-public void verify_contract_details(String policyType,String company) {
-	finalContractsPage.verifyContractDetails(policyType,company);
-}
+		if(!finalContractsPage.getFinalContractsPageHeader().isDisplayed())
+			throw new IllegalStateException("Not on the correct Page");
+
+	}
+
+	@Then("Verify Policy Details {string} and {string}")
+	public void verify_contract_details(String policyType,String company) {
+		finalContractsPage.verifyContractDetails(policyType,company);
+	}
 }
