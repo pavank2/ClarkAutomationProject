@@ -14,39 +14,37 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class ConfirmSelectionPage extends TestBase {
-    
 
-		@FindBy(css="[data-cucumber-selection-search='input']")
-		WebElement searchBar;
-		
+
+	@FindBy(css="[data-cucumber-selection-search='input']")
+	WebElement searchBar;
+
 	@FindBy(css="div[data-cucumber-category-selection-quick-option='Privathaftpflicht']")
-		WebElement natureOfPolicy;
+	WebElement natureOfPolicy;
 
-      @FindBy(css="div[data-cucumber-company-selection-quick-option='Axa']")
-	    WebElement selectedCompany;
-	    
-	    @FindBy(xpath="//div[contains(@class,'continue')]//button")
-	    WebElement confirmSelection;
-	    
-	    @FindBy(xpath="//a[contains(@href,'contracts')]")
-	    WebElement toContracts;
+	@FindBy(css="div[data-cucumber-company-selection-quick-option='Axa']")
+	WebElement selectedCompany;
 
-	    @FindBy(xpath="//h1[contains(@class,'_search-title_')]")
-		WebElement pageHeader;
+	@FindBy(xpath="//div[contains(@class,'continue')]//button")
+	WebElement confirmSelection;
 
-	    @FindBy(xpath="//div[contains(@class,'reward-screen')]")
-		WebElement confirmationScreen;
-	 
+	@FindBy(xpath="//a[contains(@href,'contracts')]")
+	WebElement toContracts;
+
+	@FindBy(xpath="//h1[contains(@class,'_search-title_')]")
+	WebElement pageHeader;
+
+	@FindBy(xpath="//div[contains(@class,'reward-screen')]")
+	WebElement confirmationScreen;
+
 	public ConfirmSelectionPage() {
-			PageFactory.initElements(driver, this);
-		}
+		PageFactory.initElements(driver, this);
+	}
 
 	public void selectNatureOfPolicy() {
 
 		WebElement natureOfPolicy = driver.findElement(By.xpath("//div[@data-cucumber-category-selection-quick-option='Privathaftpflicht']"));
 		driver.findElement(By.xpath("//div[@data-cucumber-category-selection-quick-option='Privathaftpflicht']")).click();
-
-
 		TestUtil.clickStaleElement(selectedCompany);
 
 
@@ -66,7 +64,7 @@ public class ConfirmSelectionPage extends TestBase {
 	public WebElement getConfirmationScreen() {
 		return confirmationScreen;
 	}
-	
+
 	public FinalContractsPage navigateToContracts() {
 		toContracts.click();
 		return new FinalContractsPage();
@@ -76,17 +74,4 @@ public class ConfirmSelectionPage extends TestBase {
 		return pageHeader.getText();
 	}
 
-	//Not in use. To be deleted later
-//	public FinalContractsPage verifyFinalContractsHeader() {
-//		 WebElement element = driver.findElement(By.xpath("//*[text()='Deine Verträge']"));
-//
-//			if(element.isDisplayed())
-//					return new FinalContractsPage();
-//			else
-//				throw new IllegalStateException("Not on the correct Page");
-//		//*[text()='Deine Verträge']
-//	}
-	 
-	
-	
-	}	
+}

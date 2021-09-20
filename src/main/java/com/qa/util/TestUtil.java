@@ -13,51 +13,51 @@ import base.TestBase;
 public class TestUtil extends TestBase{
 	//static WebDriver driver;
 
-//	TestUtil(WebDriver driver){
+	//	TestUtil(WebDriver driver){
 //		this.driver = driver;
 //	}
-	 public static long PAGE_LOAD_TIMEOUT = 20;
-	   public static long IMPLICIT_WAIT = 20;
+	public static long PAGE_LOAD_TIMEOUT = 20;
+	public static long IMPLICIT_WAIT = 20;
 
-	
-	   
+
+
 	public static void takeScreenshotAtEndOfTest() {
-	 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	 String currDir = System.getProperty("user.dir");
-	 try {
-		FileUtils.copyFile(scrFile, new File(currDir+"\\screenshots\\"+System.currentTimeMillis()+".png"));
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String currDir = System.getProperty("user.dir");
+		try {
+			FileUtils.copyFile(scrFile, new File(currDir+"\\screenshots\\"+System.currentTimeMillis()+".png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
-		
-	}
-	
+
 	public static void selectRadioButton(String text) {
-		
-		
+
+
 		List<WebElement> options = driver.findElements(By.xpath("//ul[@class='_radiobutton_1ybksg']//li"));
-	
-	    for(WebElement option: options) {
-		  if(option.getText().equals(text)) {
-			  option.click();
-			  break;
-		  }
-	    }		  
-		
+
+		for(WebElement option: options) {
+			if(option.getText().equals(text)) {
+				option.click();
+				break;
+			}
+		}
+
 	}
-	
+
 	public static void selectCheckBoxes(String[] checkBoxOptions) {
-		
+
 		for(String text: checkBoxOptions) {
 			driver.findElement(By.xpath("//*[@id='"+text+"']/parent::div")).click();
 		}
 	}
-	
+
 	public static int generateRandomNum() {
 		return 1000+new Random().nextInt(100000);
 	}
-	
+
 
 	public static void clickStaleElement(WebElement element){
 		boolean	 staleElement = true;
@@ -73,6 +73,17 @@ public class TestUtil extends TestBase{
 				staleElement = true;
 			}
 
+		}
+	}
+
+	public static void selectCalendarElement(List<WebElement> list, String value){
+		WebElement period=null;
+		for (int j=0;j<list.size();j++) {
+			period = list.get(j);
+			if (period.getText().equals(value)) {
+				period.click();
+				break;
+			}
 		}
 	}
 }
