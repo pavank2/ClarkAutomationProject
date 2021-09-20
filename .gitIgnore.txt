@@ -1,0 +1,11 @@
+.idea
+.settings
+json_output
+junit_xml
+screenshots
+target
+test-outout
+test-output-thread
+ClarkAutomationProject.iml
+.project
+.classpath

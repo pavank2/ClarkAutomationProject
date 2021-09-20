@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="6" time="27.612352">
+    <testcase classname="Get the Requirements" name="Navigate to Requirements Page" time="8.943507">
+        <system-out><![CDATA[When User is on landing Page................................................passed
+Then Accept the Cookies.....................................................passed
+Then Navigate to Bedarf.....................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Get the Requirements" name="Gather User details for Recommendations" time="9.913134">
+        <system-out><![CDATA[When User is on Recommendations Page........................................passed
+Then Select Birthday........................................................passed
+Then Select Gender..........................................................passed
+Then Select Location........................................................passed
+Then Select Refinance.......................................................passed
+Then Select Vehicle Ownership...............................................passed
+Then Select Family Situation................................................passed
+Then Enter Number of Children...............................................passed
+Then Select Profession......................................................passed
+Then Select Free Time Options...............................................passed
+Then Select Animals.........................................................passed
+Then Enter Salary...........................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Get the Requirements" name="Register User&#9;And View Recommendations" time="1.683482">
+        <system-out><![CDATA[When User is on Registration Page...........................................passed
+Then Enter Credentials and Submit...........................................passed
+Then Verify Recommendations Message.........................................passed
+And Click View Recommendations..............................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Get the Requirements" name="Select Type of Policy" time="2.626309">
+        <system-out><![CDATA[When User is on Select Policy Type Page.....................................passed
+Then Select Policy Type.....................................................passed
+And Select Existing Contract................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Get the Requirements" name="Confirm Selection" time="2.311731">
+        <system-out><![CDATA[Given User is on Final Selection Page.......................................passed
+When Select Multiple Policies...............................................passed
+Then Confirm Selection......................................................passed
+Then Verify Confirmation Page...............................................passed
+And Navigate to Contracts...................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Get the Requirements" name="Verify Contract Details" time="2.134189">
+        <system-out><![CDATA[Given User is on Final Contracts Page.......................................passed
+Then Verify the Contract Details............................................passed
+]]></system-out>
+    </testcase>
+</testsuite>

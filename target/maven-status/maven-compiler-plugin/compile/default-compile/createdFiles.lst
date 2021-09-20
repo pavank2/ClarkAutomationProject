@@ -1,0 +1,17 @@
+base\TestBase.class
+com\qa\factory\DriverFactory.class
+com\qa\pages\FinalContractsPage.class
+com\qa\pages\ConfirmSelectionPage.class
+stepDefinitions\ConfirmSelectionPageSteps.class
+com\qa\pages\RegisterPage.class
+com\qa\pages\SelectPolicyPage.class
+com\qa\util\WebEventListener.class
+com\qa\util\ConfigReader.class
+com\qa\util\TestUtil.class
+stepDefinitions\RegisterUserPageSteps.class
+stepDefinitions\FinalContractPageSteps.class
+stepDefinitions\SelectPolicyPageSteps.class
+com\qa\pages\RecommendationPage.class
+com\qa\pages\LandingPage.class
+stepDefinitions\RecommendationPageSteps.class
+stepDefinitions\LandingPageSteps.class
