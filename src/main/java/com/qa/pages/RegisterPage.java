@@ -1,19 +1,20 @@
 package com.qa.pages;
+/**
+ * This class has elements for the page which allows for a new user registration
+ * Author : Pavan Kulkarni
+ */
 
-import org.openqa.selenium.By;
+import base.BasePage;
+import com.qa.util.TestUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import base.TestBase;
 
 
-public class RegisterPage {
+public class RegisterPage extends BasePage {
 
-   private WebDriver driver;
+  // private WebDriver driver;
     @FindBy(xpath="//h1[@data-test-registration-page-header]")
     WebElement registerPageHeader;
 
@@ -34,10 +35,10 @@ public class RegisterPage {
   
 /********************************************************************************************/    
 
-public RegisterPage(WebDriver driver) {
-
+public RegisterPage() {
+    super();
     PageFactory.initElements(driver, this);
-    this.driver = driver;
+   // this.driver = driver;
 }
 
 public String getRegisterPageHeader(){
@@ -55,8 +56,9 @@ public String getSuccessMessage() {
 }
 
 public SelectPolicyPage clickViewRecos() {
+    TestUtil.sleepNSeconds(2);
     viewRecos.click();
-    return new SelectPolicyPage(driver);
+    return new SelectPolicyPage();
 }
 
 

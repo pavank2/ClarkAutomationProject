@@ -1,10 +1,8 @@
 package stepDefinitions;
 
 import com.qa.factory.DriverFactory;
-import com.qa.pages.LandingPage;
 import com.qa.pages.RecommendationPage;
 
-import base.TestBase;
 //import cucumber.api.java.en.Then;
 //import cucumber.api.java.en.When;
 
@@ -12,13 +10,9 @@ import com.qa.pages.RegisterPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 
 public class RecommendationPageSteps {
-	RecommendationPage recommendationPage = new RecommendationPage(DriverFactory.getDriver());
+	RecommendationPage recommendationPage = new RecommendationPage();
 	//LandingPage landingPage;
 	
 	@Given("^User is on Recommendations Page$")

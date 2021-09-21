@@ -9,82 +9,84 @@ import com.qa.factory.DriverFactory;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 
-import base.TestBase;
+public class TestUtil {
 
-public class TestUtil{
-	//static WebDriver driver;
+    public static long PAGE_LOAD_TIMEOUT = 20;
+    public static long IMPLICIT_WAIT = 20;
 
-	//	TestUtil(WebDriver driver){
-//		this.driver = driver;
-//	}
-	public static long PAGE_LOAD_TIMEOUT = 20;
-	public static long IMPLICIT_WAIT = 20;
-
-  static WebDriver driver = DriverFactory.getDriver();
-
-	public static void takeScreenshotAtEndOfTest() {
-		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String currDir = System.getProperty("user.dir");
-		try {
-			FileUtils.copyFile(scrFile, new File(currDir+"\\screenshots\\"+System.currentTimeMillis()+".png"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
-
-	public static void selectRadioButton(String text) {
+    static WebDriver driver = DriverFactory.getDriver();
 
 
-		List<WebElement> options = driver.findElements(By.xpath("//ul[@class='_radiobutton_1ybksg']//li"));
+    public static void takeScreenshotAtEndOfTest() {
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        String currDir = System.getProperty("user.dir");
+        try {
+            FileUtils.copyFile(scrFile, new File(currDir + "\\screenshots\\" + System.currentTimeMillis() + ".png"));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
-		for(WebElement option: options) {
-			if(option.getText().equals(text)) {
-				option.click();
-				break;
-			}
-		}
+    }
 
-	}
-
-	public static void selectCheckBoxes(String[] checkBoxOptions) {
-
-		for(String text: checkBoxOptions) {
-			driver.findElement(By.xpath("//*[@id='"+text+"']/parent::div")).click();
-		}
-	}
-
-	public static int generateRandomNum() {
-		return 1000+new Random().nextInt(100000);
-	}
+    public static void sleepNSeconds(int n){
+        try {
+            Thread.sleep(n*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void selectRadioButton(String text) {
 
 
-	public static void clickStaleElement(WebElement element){
-		boolean	 staleElement = true;
-		while(staleElement){
+        List<WebElement> options = driver.findElements(By.xpath("//ul[@class='_radiobutton_1ybksg']//li"));
 
-			try{
+        for (WebElement option : options) {
+            if (option.getText().equals(text)) {
+                option.click();
+                break;
+            }
+        }
 
-				element.click();
-				staleElement = false;
+    }
 
-			} catch(StaleElementReferenceException e){
+    public static void selectCheckBoxes(String[] checkBoxOptions) {
 
-				staleElement = true;
-			}
+        for (String text : checkBoxOptions) {
+            driver.findElement(By.xpath("//*[@id='" + text + "']/parent::div")).click();
+        }
+    }
 
-		}
-	}
+    public static int generateRandomNum() {
+        return 1000 + new Random().nextInt(100000);
+    }
 
-	public static void selectCalendarElement(List<WebElement> list, String value){
-		WebElement period=null;
-		for (int j=0;j<list.size();j++) {
-			period = list.get(j);
-			if (period.getText().equals(value)) {
-				period.click();
-				break;
-			}
-		}
-	}
+
+    public static void clickStaleElement(WebElement element) {
+        boolean staleElement = true;
+        while (staleElement) {
+
+            try {
+
+                element.click();
+                staleElement = false;
+
+            } catch (StaleElementReferenceException e) {
+
+                staleElement = true;
+            }
+
+        }
+    }
+
+    public static void selectCalendarElement(List<WebElement> list, String value) {
+        WebElement period = null;
+        for (int j = 0; j < list.size(); j++) {
+            period = list.get(j);
+            if (period.getText().equals(value)) {
+                period.click();
+                break;
+            }
+        }
+    }
 }

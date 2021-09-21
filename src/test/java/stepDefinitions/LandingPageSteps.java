@@ -1,19 +1,18 @@
 package stepDefinitions;
 
-import base.TestBase;
+import base.BasePage;
 import com.qa.factory.DriverFactory;
 import com.qa.pages.LandingPage;
 import com.qa.util.ConfigReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.After;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Properties;
 
 public class LandingPageSteps{
-	//TestBase base = new TestBase();
+	BasePage base = new BasePage();
 	private DriverFactory driverFactory;
 	private WebDriver driver;
 	private ConfigReader configReader;
@@ -23,12 +22,14 @@ public class LandingPageSteps{
 
 	@Given("^Browser is launched$")
 	public void launch_browser(){
-		configReader = new ConfigReader();
-		prop = configReader.init_prop();
-		String browserName = prop.getProperty("browser");
-		driverFactory = new DriverFactory();
-		driver = driverFactory.init_driver(browserName);
-		landingPage = new LandingPage(DriverFactory.getDriver());
+//		configReader = new ConfigReader();
+//		prop = configReader.init_prop();
+//		String browserName = prop.getProperty("browser");
+//		driverFactory = new DriverFactory();
+//		driver = driverFactory.init_driver(browserName);
+//		landingPage = new LandingPage(DriverFactory.getDriver());
+		base.initialize();
+		landingPage = new LandingPage();
 	}
 
 	@When("^User is on landing Page$")

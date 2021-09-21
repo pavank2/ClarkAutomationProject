@@ -1,23 +1,29 @@
 package com.qa.pages;
-import java.util.List;
 
-import com.qa.factory.DriverFactory;
-import org.openqa.selenium.By;
+/**
+ * This class contains elements and methods for the page which covers the entire process where user details are gathered
+ * Combination of all the question panes is considered as a single page for ease of maintainability
+ * Author: Pavan Kulkarni
+ */
+
+import java.util.List;
+import java.util.logging.Logger;
+
+import base.BasePage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import base.TestBase;
 import com.qa.util.TestUtil;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class RecommendationPage {
 
-	private WebDriver driver;
+public class RecommendationPage extends BasePage {
+
+//	private WebDriver driver;
+//	Logger log = Logger.getLogger(RecommendationPage.class);
+//	log.info("All the recommendation objects");
 	@FindBy (xpath="//input[@data-picker='date-birthday']/following-sibling::span")
 	private WebElement datePicker;
 
@@ -84,23 +90,20 @@ public class RecommendationPage {
 
 	/********************************************************************************************/
 
-	public RecommendationPage(WebDriver driver) {
+	public RecommendationPage() {
+		super();
 		PageFactory.initElements(driver, this);
-		this.driver=driver;
+		//this.driver=driver;
 	}
 
 	public void selectBirthDay()  {
 
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		TestUtil.sleepNSeconds(3);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].click()", datePicker);
 		TestUtil.selectCalendarElement(years,"1985");
 		TestUtil.selectCalendarElement(months,"Aug");
-		day.click();  //Iterating through days will be time-consuming, so selecting date directly
+		day.click();  //Iterating through 30 is not efficient, so selecting date directly
 	}
 
 	public void selectGender() {
@@ -163,7 +166,7 @@ public class RecommendationPage {
 	public RegisterPage enterSalary() {
 		salary.sendKeys("50000");
 		saveBtn.click();
-		return new RegisterPage(driver);
+		return new RegisterPage();
 	}
 
 	public WebElement getLocationPageHeader(){

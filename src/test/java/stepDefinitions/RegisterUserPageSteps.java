@@ -1,24 +1,20 @@
 package stepDefinitions;
 
 import com.qa.factory.DriverFactory;
-import com.qa.pages.LandingPage;
-import com.qa.pages.RecommendationPage;
 import com.qa.pages.RegisterPage;
 
-import base.TestBase;
+import base.BasePage;
 //import cucumber.api.java.en.Then;
 //import cucumber.api.java.en.When;
 
 import com.qa.pages.SelectPolicyPage;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import com.qa.util.TestUtil;
-import org.openqa.selenium.By;
 
-public class RegisterUserPageSteps extends TestBase {
+public class RegisterUserPageSteps extends BasePage {
   
-	RegisterPage registerPage = new RegisterPage(DriverFactory.getDriver());
+	RegisterPage registerPage = new RegisterPage();
 
 	@When("^User is on Registration Page$")
 	public void verify_user_on_registerPage(){

@@ -6,17 +6,21 @@ import com.qa.factory.DriverFactory;
 import com.qa.util.ConfigReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.qa.util.TestUtil;
 import com.qa.util.WebEventListener;
 
-public class TestBase {
+public class BasePage {
 	DriverFactory driverFactory;
-	public static WebDriver driver;
+	public WebDriver driver;
 	Properties prop;
 	private ConfigReader configReader;
 
+	public BasePage(){
+		driver= DriverFactory.getDriver();
+	}
 	public void initialize() {
 		configReader = new ConfigReader();
 		prop = configReader.init_prop();

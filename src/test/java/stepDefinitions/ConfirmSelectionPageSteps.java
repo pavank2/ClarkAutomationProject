@@ -16,7 +16,7 @@ import org.openqa.selenium.By;
 
 public class ConfirmSelectionPageSteps {
 
-	ConfirmSelectionPage confirmSelection = new ConfirmSelectionPage(DriverFactory.getDriver());
+	ConfirmSelectionPage confirmSelection = new ConfirmSelectionPage();
 
 	@Given("^User is on Final Selection Page$")
 	public void user_is_confirm_policy_page(){

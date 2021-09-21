@@ -1,14 +1,18 @@
 package com.qa.pages;
-import org.openqa.selenium.WebDriver;
+import com.qa.util.TestUtil;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import base.TestBase;
+import base.BasePage;
 
-public class LandingPage {
+/**
+ * This class has elements for the Landing Page for Recommendations funnel
+ * Author: Pavan Kulkarni
+ */
+public class LandingPage extends BasePage {
 
-    private WebDriver driver;
+   // private WebDriver driver;
 	@FindBy(name="cs_company_name")
 	private WebElement companyToSearch;
 
@@ -21,10 +25,12 @@ public class LandingPage {
 	@FindBy(xpath="//a[contains(@href,'demandcheck')]//span")
 	private WebElement getStarted;
 
-	/**************************************************************/
-	public LandingPage(WebDriver driver) {
+	/*******************************************************************************/
+
+	public LandingPage() {
+		super();
 		PageFactory.initElements(driver, this);
-		this.driver = driver;
+		//this.driver = driver;
 	}
 
 	public void navigateToURL(String url) {
@@ -32,15 +38,18 @@ public class LandingPage {
 	}
 
 	public void acceptCookies() {
+		TestUtil.sleepNSeconds(2);  //Sleep has been added to slow down execution speed, just for demo purposes
 		acceptCookies.click();
 	}
 
 	public void clickRecommendations() {
+		TestUtil.sleepNSeconds(2);
 		recommendations.click();
 	}
 
 	public RecommendationPage startRecommendations() {
+		TestUtil.sleepNSeconds(2);
 		getStarted.click();
-		return new RecommendationPage(driver);
+		return new RecommendationPage();
 	}
 }

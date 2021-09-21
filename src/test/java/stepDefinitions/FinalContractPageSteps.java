@@ -15,7 +15,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class FinalContractPageSteps {
-	FinalContractsPage finalContractsPage = new FinalContractsPage(DriverFactory.getDriver());
+	FinalContractsPage finalContractsPage = new FinalContractsPage();
 
 	@Given("^User is on Final Contracts Page$")
 	public void verify_user_is_on_contracts_page() {
