@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import base.TestBase;
 public class FinalContractsPage extends TestBase{
-	//WebDriver driver;
+	private WebDriver driver;
 	@FindBy(xpath="//button[@data-test-product-card='standard']//div[@class='_title_niboal']")
 	WebElement insuranceType;
 	
@@ -22,9 +22,10 @@ public class FinalContractsPage extends TestBase{
 
 
 
-	public FinalContractsPage() {
+	public FinalContractsPage(WebDriver driver) {
 
 		PageFactory.initElements(driver, this);
+		this.driver = driver;
 	}
 
 	public WebElement getFinalContractsPageHeader(){

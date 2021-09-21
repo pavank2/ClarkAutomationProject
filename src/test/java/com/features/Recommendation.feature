@@ -2,9 +2,10 @@ Feature: Automation Project to gather requirements and purchase an Insurance
 
 Scenario: Navigate to Requirements Page
 
-	Given User is on landing Page
-	When Accept the Cookies
-	Then Navigate to Bedarf
+	Given Browser is launched
+    When User is on landing Page
+	Then Accept the Cookies
+	Then Navigate to Recommendations
 
 
 Scenario: Gather User details for Recommendations
@@ -47,6 +48,7 @@ Scenario: Register User	And View Recommendations
  Scenario: Verify Contract Details
     Given User is on Final Contracts Page
     Then Verify Policy Details "Privathaftpflicht" and "Axa"
+    And Complete the Test
    
      
    

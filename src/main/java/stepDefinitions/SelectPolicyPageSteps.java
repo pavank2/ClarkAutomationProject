@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import base.TestBase;
+import com.qa.factory.DriverFactory;
 import com.qa.pages.ConfirmSelectionPage;
 import com.qa.pages.SelectPolicyPage;
 
@@ -11,18 +12,26 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SelectPolicyPageSteps extends TestBase {
+public class SelectPolicyPageSteps {
 
-	SelectPolicyPage selectPolicyPage = new SelectPolicyPage();
+	WebDriver driver = DriverFactory.getDriver();
+	SelectPolicyPage selectPolicyPage = new SelectPolicyPage(driver);
 	
 	@Given("^User is on Select Policy Type Page$")
 	public void user_is_on_select_recommendations_page(){
 		WebDriverWait wait = new WebDriverWait(driver, 15);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@class,'cucumber-modal-close')]")));
+
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		driver.findElement(By.xpath("//button[contains(@class,'cucumber-modal-close')]")).click();
 
 		WebElement selectRecosHeader = driver.findElement(By.xpath("//h1[contains(@class,'_hero-header_')]"));

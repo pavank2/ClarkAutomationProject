@@ -15,9 +15,9 @@ import com.qa.util.TestUtil;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class RecommendationPage extends TestBase {
+public class RecommendationPage {
 
-
+	private WebDriver driver;
 	@FindBy (xpath="//input[@data-picker='date-birthday']/following-sibling::span")
 	private WebElement datePicker;
 
@@ -84,8 +84,9 @@ public class RecommendationPage extends TestBase {
 
 	/********************************************************************************************/
 
-	public RecommendationPage() {
+	public RecommendationPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver=driver;
 	}
 
 	public void selectBirthDay()  {
@@ -162,7 +163,7 @@ public class RecommendationPage extends TestBase {
 	public RegisterPage enterSalary() {
 		salary.sendKeys("50000");
 		saveBtn.click();
-		return new RegisterPage();
+		return new RegisterPage(driver);
 	}
 
 	public WebElement getLocationPageHeader(){

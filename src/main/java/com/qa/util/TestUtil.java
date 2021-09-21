@@ -5,12 +5,13 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
+import com.qa.factory.DriverFactory;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 
 import base.TestBase;
 
-public class TestUtil extends TestBase{
+public class TestUtil{
 	//static WebDriver driver;
 
 	//	TestUtil(WebDriver driver){
@@ -19,7 +20,7 @@ public class TestUtil extends TestBase{
 	public static long PAGE_LOAD_TIMEOUT = 20;
 	public static long IMPLICIT_WAIT = 20;
 
-
+  static WebDriver driver = DriverFactory.getDriver();
 
 	public static void takeScreenshotAtEndOfTest() {
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);

@@ -11,9 +11,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import base.TestBase;
 
 
-public class RegisterPage extends TestBase {
+public class RegisterPage {
 
-   // WebDriver driver;
+   private WebDriver driver;
     @FindBy(xpath="//h1[@data-test-registration-page-header]")
     WebElement registerPageHeader;
 
@@ -34,8 +34,10 @@ public class RegisterPage extends TestBase {
   
 /********************************************************************************************/    
 
-public RegisterPage() {
+public RegisterPage(WebDriver driver) {
+
     PageFactory.initElements(driver, this);
+    this.driver = driver;
 }
 
 public String getRegisterPageHeader(){
@@ -54,26 +56,8 @@ public String getSuccessMessage() {
 
 public SelectPolicyPage clickViewRecos() {
     viewRecos.click();
-    return new SelectPolicyPage();
+    return new SelectPolicyPage(driver);
 }
-
-//public SelectPolicyPage verifySelectRecosPage(String expectedSelectPolicyHeader) {
-//
-//  WebDriverWait	wait = new WebDriverWait(driver, 15);
-//  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@class,'cucumber-modal-close')]")));
-//  driver.findElement(By.xpath("//button[contains(@class,'cucumber-modal-close')]")).click();
-//
-//  WebElement selectRecosHeader = driver.findElement(By.xpath("//h1[contains(@class,'_hero-header_')]"));
-//
-//  while (!selectRecosHeader.isEnabled())
-//	  driver.findElement(By.xpath("//button[contains(@class,'cucumber-modal-close')]")).click();
-//  String selectPolicyHeader = selectRecosHeader.getText();
-//
-//	if(selectPolicyHeader.equals(expectedSelectPolicyHeader))
-//			return new SelectPolicyPage();
-//	else return null;
-//}
-
 
 
 }

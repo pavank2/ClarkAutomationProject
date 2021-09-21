@@ -9,8 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import base.TestBase;
 
 
-public class SelectPolicyPage extends TestBase {
-//WebDriver driver;
+public class SelectPolicyPage {
+private WebDriver driver;
 
 	@FindBy(css="h3[data-cucumber-recommendation-card-title='Private Altersvorsorge']")
 	WebElement privateRetirement;
@@ -19,9 +19,10 @@ public class SelectPolicyPage extends TestBase {
 	WebElement existingContract;
 	/********************************************************************************************/
 
-	public SelectPolicyPage() {
-		//   this.driver = driver;
+	public SelectPolicyPage(WebDriver driver) {
+		//
 		PageFactory.initElements(driver, this);
+		this.driver = driver;
 	}
 	public void selectInsurancePolicy() {
 
@@ -30,18 +31,8 @@ public class SelectPolicyPage extends TestBase {
 	}
 	public ConfirmSelectionPage selectExistingContract() {
 		existingContract.click();
-		return new ConfirmSelectionPage();
+		return new ConfirmSelectionPage(driver);
 
 	}
-//	//Not in use. To be removed later
-//	public ConfirmSelectionPage verifyConfirmSelectionPage(String expectedConfirmSelectionPageHeader) {
-//
-//		String confirmSelectionPageHeader = driver.findElement(By.xpath("//h1[contains(@class,'_search-title_')]")).getText();
-//
-//		if(confirmSelectionPageHeader.contains(expectedConfirmSelectionPageHeader))
-//			return new ConfirmSelectionPage();
-//		else
-//			throw new IllegalStateException("User not on the Right Page");
-//	}
 
 }

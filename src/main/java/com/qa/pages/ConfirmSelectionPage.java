@@ -13,9 +13,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class ConfirmSelectionPage extends TestBase {
+public class ConfirmSelectionPage {
 
-
+    private WebDriver driver;
 	@FindBy(css="[data-cucumber-selection-search='input']")
 	WebElement searchBar;
 
@@ -39,8 +39,10 @@ public class ConfirmSelectionPage extends TestBase {
 
 /*******************************************************************************/
 
-	public ConfirmSelectionPage() {
+	public ConfirmSelectionPage(WebDriver driver) {
+
 		PageFactory.initElements(driver, this);
+		this.driver = driver;
 	}
 
 	public void selectNatureOfPolicy() {
@@ -66,7 +68,7 @@ public class ConfirmSelectionPage extends TestBase {
 
 	public FinalContractsPage navigateToContracts() {
 		toContracts.click();
-		return new FinalContractsPage();
+		return new FinalContractsPage(driver);
 	}
 
 	public String getPageHeader(){

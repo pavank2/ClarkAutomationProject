@@ -18,7 +18,7 @@ import org.openqa.selenium.By;
 
 public class RegisterUserPageSteps extends TestBase {
   
-	RegisterPage registerPage = new RegisterPage();
+	RegisterPage registerPage = new RegisterPage(DriverFactory.getDriver());
 
 	@When("^User is on Registration Page$")
 	public void verify_user_on_registerPage(){

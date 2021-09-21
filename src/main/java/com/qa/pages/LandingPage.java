@@ -1,13 +1,14 @@
 package com.qa.pages;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import base.TestBase;
 
-public class LandingPage extends TestBase {
+public class LandingPage {
 
-
+    private WebDriver driver;
 	@FindBy(name="cs_company_name")
 	private WebElement companyToSearch;
 
@@ -21,8 +22,9 @@ public class LandingPage extends TestBase {
 	private WebElement getStarted;
 
 	/**************************************************************/
-	public LandingPage() {
+	public LandingPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver = driver;
 	}
 
 	public void navigateToURL(String url) {
@@ -39,6 +41,6 @@ public class LandingPage extends TestBase {
 
 	public RecommendationPage startRecommendations() {
 		getStarted.click();
-		return new RecommendationPage();
+		return new RecommendationPage(driver);
 	}
 }

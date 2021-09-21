@@ -17,13 +17,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class RecommendationPageSteps extends TestBase {
-	RecommendationPage recommendationPage = new RecommendationPage();
-	LandingPage landingPage;
+public class RecommendationPageSteps {
+	RecommendationPage recommendationPage = new RecommendationPage(DriverFactory.getDriver());
+	//LandingPage landingPage;
 	
 	@Given("^User is on Recommendations Page$")
 	public void user_is_on_Recommendation_Page() throws Throwable {
-		if(!driver.getTitle().contains("Clark"))
+		if(!DriverFactory.getDriver().getTitle().contains("Clark"))
 			throw new IllegalStateException();
 	}
 	
