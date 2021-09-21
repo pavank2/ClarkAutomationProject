@@ -9,17 +9,18 @@ public class LandingPage extends TestBase {
 
 
 	@FindBy(name="cs_company_name")
-	WebElement companyToSearch;
+	private WebElement companyToSearch;
 
 	@FindBy(xpath="//button[contains(@class,'btn-primary')]")
-	WebElement acceptCookies;
+	private WebElement acceptCookies;
 
 	@FindBy(xpath="//a[contains(@href,'recommendations')]")
-	WebElement recommendations;
+	private WebElement recommendations;
 
 	@FindBy(xpath="//a[contains(@href,'demandcheck')]//span")
-	WebElement getStarted;
+	private WebElement getStarted;
 
+	/**************************************************************/
 	public LandingPage() {
 		PageFactory.initElements(driver, this);
 	}

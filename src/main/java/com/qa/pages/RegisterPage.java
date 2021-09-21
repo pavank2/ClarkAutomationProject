@@ -57,22 +57,22 @@ public SelectPolicyPage clickViewRecos() {
     return new SelectPolicyPage();
 }
 
-public SelectPolicyPage verifySelectRecosPage(String expectedSelectPolicyHeader) {
-
-  WebDriverWait	wait = new WebDriverWait(driver, 15);
-  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@class,'cucumber-modal-close')]")));
-  driver.findElement(By.xpath("//button[contains(@class,'cucumber-modal-close')]")).click();
-	
-  WebElement selectRecosHeader = driver.findElement(By.xpath("//h1[contains(@class,'_hero-header_')]"));
-  
-  while (!selectRecosHeader.isEnabled())
-	  driver.findElement(By.xpath("//button[contains(@class,'cucumber-modal-close')]")).click();	
-  String selectPolicyHeader = selectRecosHeader.getText();
-    
-	if(selectPolicyHeader.equals(expectedSelectPolicyHeader))
-			return new SelectPolicyPage();
-	else return null;
-}
+//public SelectPolicyPage verifySelectRecosPage(String expectedSelectPolicyHeader) {
+//
+//  WebDriverWait	wait = new WebDriverWait(driver, 15);
+//  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@class,'cucumber-modal-close')]")));
+//  driver.findElement(By.xpath("//button[contains(@class,'cucumber-modal-close')]")).click();
+//
+//  WebElement selectRecosHeader = driver.findElement(By.xpath("//h1[contains(@class,'_hero-header_')]"));
+//
+//  while (!selectRecosHeader.isEnabled())
+//	  driver.findElement(By.xpath("//button[contains(@class,'cucumber-modal-close')]")).click();
+//  String selectPolicyHeader = selectRecosHeader.getText();
+//
+//	if(selectPolicyHeader.equals(expectedSelectPolicyHeader))
+//			return new SelectPolicyPage();
+//	else return null;
+//}
 
 
 
