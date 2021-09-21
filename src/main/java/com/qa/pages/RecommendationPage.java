@@ -19,68 +19,68 @@ public class RecommendationPage extends TestBase {
 
 
 	@FindBy (xpath="//input[@data-picker='date-birthday']/following-sibling::span")
-	WebElement datePicker;
+	private WebElement datePicker;
 
 	@FindBy (xpath = "//ul[@data-view='years']/li")
-	List<WebElement> years;
+	private List<WebElement> years;
 
 	@FindBy (xpath = "//ul[@data-view='months']/li")
-	List<WebElement> months;
+	private List<WebElement> months;
 
 	@FindBy (xpath = "//ul[@data-view='days']//li[20]")
-	WebElement day;
+	private WebElement day;
 
 	@FindBy (xpath = "//button[@data-test-button-appearance='primary']")
-	WebElement next;
+	private WebElement next;
 
 
 	@FindBy (xpath = "//li[@data-ember-action-178='178']")
-	WebElement selectGender;
+	private WebElement selectGender;
 
 	@FindBy (xpath="//*[@id='Auto']/parent::div")
-	WebElement autoVehicle;
+	private WebElement autoVehicle;
 
 	@FindBy (xpath="//*[@id='Motorrad']/parent::div")
-	WebElement motorVehicle;
+	private WebElement motorVehicle;
 
 	@FindBy(css="input[type='text']")
-	WebElement noOfChildren;
+	private WebElement noOfChildren;
 
 	@FindBy(css="input[placeholder='z.B. 40000']")
-	WebElement salary;
+	private WebElement salary;
 
 	@FindBy(css="button[data-test-button-appearance='primary']")
-	WebElement saveBtn;
+	private WebElement saveBtn;
 
 	@FindBy(xpath="//span[contains(text(),'Wo wohnst du?')]")
-	WebElement locationPageHeader;
+	private WebElement locationPageHeader;
 
 	@FindBy(xpath="//span[contains(text(),'finanzieren')]")
-	WebElement refinancePageHeader;
+	private WebElement refinancePageHeader;
 
 	@FindBy(xpath="//span[contains(text(),'folgenden Fahrzeuge?')]")
-	WebElement vehiclePageHeader;
+	private WebElement vehiclePageHeader;
 
 	@FindBy(xpath="//span[contains(text(),'Familiensituation')]")
-	WebElement familyPageHeader;
+	private WebElement familyPageHeader;
 
 	@FindBy(xpath="//span[contains(text(),'Hast du Kinder')]")
-	WebElement childrenPageHeader;
+	private WebElement childrenPageHeader;
 
 	@FindBy(xpath="//span[contains(text(),'Was machst du beruflich')]")
-	WebElement professionPageHeader;
+	private WebElement professionPageHeader;
 
 	@FindBy(xpath="//span[contains(text(),'deiner Freizeit')]")
-	WebElement freeTimePageHeader;
+	private WebElement freeTimePageHeader;
 
 	@FindBy(xpath="//span[contains(text(),'Hast du Tiere?')]")
-	WebElement animalsPageHeader;
+	private WebElement animalsPageHeader;
 
 	@FindBy(xpath="//span[contains(text(),'Jahresbruttogehalt')]")
-	WebElement salaryPageHeader;
+	private WebElement salaryPageHeader;
 
 	@FindBy(xpath="//span[contains(text(),'Was ist dein Geschlecht?')]")
-	WebElement genderPageHeader;
+	private WebElement genderPageHeader;
 
 	/********************************************************************************************/
 
