@@ -16,22 +16,22 @@ public class RegisterPage extends BasePage {
 
   // private WebDriver driver;
     @FindBy(xpath="//h1[@data-test-registration-page-header]")
-    WebElement registerPageHeader;
+    private WebElement registerPageHeader;
 
     @FindBy(css="input[type='email']")
-       WebElement email;
+    private WebElement email;
     
     @FindBy(css="input[type='password']")
-    WebElement password; 
+    private WebElement password;
     
     @FindBy(css="button")
-    WebElement submit;  
+    private WebElement submit;
     
     @FindBy(xpath="//h1[contains(@class,'cucumber-reward-screen-header')]")
-    WebElement successMsg;
+    private WebElement successMsg;
   
     @FindBy(xpath="//a[contains(@href,'recommendations')]")
-    WebElement viewRecos;
+    private WebElement viewRecos;
   
 /********************************************************************************************/    
 

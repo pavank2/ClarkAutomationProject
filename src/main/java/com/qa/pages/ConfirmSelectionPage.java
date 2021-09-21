@@ -17,25 +17,25 @@ public class ConfirmSelectionPage extends BasePage {
 
    // private WebDriver driver;
     @FindBy(css = "[data-cucumber-selection-search='input']")
-    WebElement searchBar;
+    private WebElement searchBar;
 
     @FindBy(css = "div[data-cucumber-category-selection-quick-option='Privathaftpflicht']")
-    WebElement natureOfPolicy;
+    private WebElement natureOfPolicy;
 
     @FindBy(css = "div[data-cucumber-company-selection-quick-option='Axa']")
-    WebElement selectedCompany;
+    private WebElement selectedCompany;
 
     @FindBy(xpath = "//div[contains(@class,'continue')]//button")
-    WebElement confirmSelection;
+    private WebElement confirmSelection;
 
     @FindBy(xpath = "//a[contains(@href,'contracts')]")
-    WebElement toContracts;
+    private WebElement toContracts;
 
     @FindBy(xpath = "//h1[contains(@class,'_search-title_')]")
-    WebElement pageHeader;
+    private WebElement pageHeader;
 
     @FindBy(xpath = "//div[contains(@class,'reward-screen')]")
-    WebElement confirmationScreen;
+    private WebElement confirmationScreen;
 
     /*******************************************************************************/
 

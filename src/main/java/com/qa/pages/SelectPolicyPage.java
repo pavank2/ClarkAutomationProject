@@ -16,10 +16,10 @@ public class SelectPolicyPage extends BasePage {
 //private WebDriver driver;
 
 	@FindBy(css="h3[data-cucumber-recommendation-card-title='Private Altersvorsorge']")
-	WebElement privateRetirement;
+	private WebElement privateRetirement;
 
 	@FindBy(xpath="//*[text()='Bestehenden Vertrag hinzufügen']")
-	WebElement existingContract;
+	private WebElement existingContract;
 
 	/*******************************************************************************/
 

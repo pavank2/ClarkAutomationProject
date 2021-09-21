@@ -15,13 +15,13 @@ import base.BasePage;
 public class FinalContractsPage extends BasePage {
     //private WebDriver driver;
     @FindBy(xpath = "//button[@data-test-product-card='standard']//div[@class='_title_niboal']")
-    WebElement insuranceType;
+    private WebElement insuranceType;
 
     @FindBy(xpath = "//button[@data-test-product-card='standard']//div[@class='_subtitle_niboal']")
-    WebElement insuranceCompany;
+    private WebElement insuranceCompany;
 
     @FindBy(xpath = "//*[text()='Deine Verträge']")
-    WebElement finalContractsPageHeader;
+    private WebElement finalContractsPageHeader;
 
     /*******************************************************************************/
 

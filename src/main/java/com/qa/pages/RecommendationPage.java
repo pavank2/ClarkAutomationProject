@@ -17,13 +17,12 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.qa.util.TestUtil;
-
+import org.apache.logging.log4j.*;
 
 public class RecommendationPage extends BasePage {
 
 //	private WebDriver driver;
-//	Logger log = Logger.getLogger(RecommendationPage.class);
-//	log.info("All the recommendation objects");
+
 	@FindBy (xpath="//input[@data-picker='date-birthday']/following-sibling::span")
 	private WebElement datePicker;
 
