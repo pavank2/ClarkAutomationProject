@@ -13,7 +13,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class SelectPolicyPage extends BasePage {
-//private WebDriver driver;
 
 	@FindBy(css="h3[data-cucumber-recommendation-card-title='Private Altersvorsorge']")
 	private WebElement privateRetirement;
@@ -26,7 +25,6 @@ public class SelectPolicyPage extends BasePage {
 	public SelectPolicyPage() {
 		super();
 		PageFactory.initElements(driver, this);
-		//this.driver = driver;
 	}
 	public void selectInsurancePolicy() {
 		TestUtil.sleepNSeconds(2);

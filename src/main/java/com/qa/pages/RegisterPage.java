@@ -13,8 +13,6 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class RegisterPage extends BasePage {
-
-  // private WebDriver driver;
     @FindBy(xpath="//h1[@data-test-registration-page-header]")
     private WebElement registerPageHeader;
 
@@ -38,7 +36,6 @@ public class RegisterPage extends BasePage {
 public RegisterPage() {
     super();
     PageFactory.initElements(driver, this);
-   // this.driver = driver;
 }
 
 public String getRegisterPageHeader(){

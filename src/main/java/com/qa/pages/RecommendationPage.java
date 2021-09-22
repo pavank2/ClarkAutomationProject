@@ -13,11 +13,10 @@ import base.BasePage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.qa.util.TestUtil;
-import org.apache.logging.log4j.*;
+
 
 public class RecommendationPage extends BasePage {
 

@@ -18,9 +18,6 @@ public class DriverFactory {
     /**
      * This method is used to initialize the threadlocal driver on the basis of given
      * browser
-     *
-     * @param browser
-     * @return this will return tldriver.
      */
     public WebDriver init_driver(String browser) {
 
@@ -36,18 +33,11 @@ public class DriverFactory {
                 System.out.println("Please pass the correct browser value: " + browser);
             }
 
-            getDriver().manage().deleteAllCookies();
-            getDriver().manage().window().maximize();
-            getDriver().manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-            getDriver().manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+
             return getDriver();
 
         }
-        /**
-     * this is used to get the driver with ThreadLocal
-     *
-     * @return
-     */
+
     public static synchronized WebDriver getDriver() {
         return tlDriver.get();
     }

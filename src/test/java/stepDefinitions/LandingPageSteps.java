@@ -13,30 +13,21 @@ import java.util.Properties;
 
 public class LandingPageSteps{
 	BasePage base = new BasePage();
-	private DriverFactory driverFactory;
-	private WebDriver driver;
-	private ConfigReader configReader;
-	Properties prop;
+//	private DriverFactory driverFactory;
+//	private WebDriver driver;
+//	private ConfigReader configReader;
+//	Properties prop;
 
 	LandingPage landingPage;
 
 	@Given("^Browser is launched$")
 	public void launch_browser(){
-//		configReader = new ConfigReader();
-//		prop = configReader.init_prop();
-//		String browserName = prop.getProperty("browser");
-//		driverFactory = new DriverFactory();
-//		driver = driverFactory.init_driver(browserName);
-//		landingPage = new LandingPage(DriverFactory.getDriver());
 		base.initialize();
 		landingPage = new LandingPage();
 	}
 
 	@When("^User is on landing Page$")
 	public void user_is_on_landingPage() throws Throwable {
-		//base.initialize();
-		//landingPage = new LandingPage();
-	//	landingPage.navigateToURL("https://staging.clark.de/de/app/contracts?cv=2");
 		DriverFactory.getDriver().get("https://staging.clark.de/de/app/contracts?cv=2");
 	}
 
