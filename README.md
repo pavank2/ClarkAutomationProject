@@ -9,7 +9,7 @@ Summary
 - OOP Principles have been used to optimize the code.
 - log4j component has been added to generate logs wherever required.
 - Extent Spark reporting has been incorporated. Reports are generated at the end of each execution (Details below).
-- The Suite consists of 1 Feature File, 6 Scenarios and 32 Step Definitions and executes in ~ 1 min.
+- The Suite consists of 1 Feature File, 6 Scenarios and 32 Step Definitions and executes in < 1 min.
   However, "sleep" method has been added strategically to slow down execution deliberately for demo purposes.
 
 Prerequistes
