@@ -12,10 +12,6 @@ import base.BasePage;
  */
 public class LandingPage extends BasePage {
 
-   // private WebDriver driver;
-	@FindBy(name="cs_company_name")
-	private WebElement companyToSearch;
-
 	@FindBy(xpath="//button[contains(@class,'btn-primary')]")
 	private WebElement acceptCookies;
 
@@ -25,17 +21,19 @@ public class LandingPage extends BasePage {
 	@FindBy(xpath="//a[contains(@href,'demandcheck')]//span")
 	private WebElement getStarted;
 
+//	@FindBy(name="cs_company_name")
+//	private WebElement companyToSearch;
+
 	/*******************************************************************************/
 
 	public LandingPage() {
 		super();
 		PageFactory.initElements(driver, this);
-		//this.driver = driver;
 	}
 
-	public void navigateToURL(String url) {
-		driver.get(url);
-	}
+//	public void navigateToURL(String url) {
+//		driver.get(url);
+//	}
 
 	public void acceptCookies() {
 		TestUtil.sleepNSeconds(2);  //Sleep has been added to slow down execution speed, just for demo purposes

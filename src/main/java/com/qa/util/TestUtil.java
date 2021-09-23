@@ -37,10 +37,7 @@ public class TestUtil {
         }
     }
     public static void selectRadioButton(String text) {
-
-
         List<WebElement> options = driver.findElements(By.xpath("//ul[@class='_radiobutton_1ybksg']//li"));
-
         for (WebElement option : options) {
             if (option.getText().equals(text)) {
                 option.click();
@@ -65,14 +62,10 @@ public class TestUtil {
     public static void clickStaleElement(WebElement element) {
         boolean staleElement = true;
         while (staleElement) {
-
             try {
-
                 element.click();
                 staleElement = false;
-
             } catch (StaleElementReferenceException e) {
-
                 staleElement = true;
             }
 
@@ -80,11 +73,11 @@ public class TestUtil {
     }
 
     public static void selectCalendarElement(List<WebElement> list, String value) {
-        WebElement period = null;
+        WebElement timePeriod = null;
         for (int j = 0; j < list.size(); j++) {
-            period = list.get(j);
-            if (period.getText().equals(value)) {
-                period.click();
+            timePeriod = list.get(j);
+            if (timePeriod.getText().equals(value)) {
+                timePeriod.click();
                 break;
             }
         }

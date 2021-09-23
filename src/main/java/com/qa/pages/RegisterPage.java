@@ -1,9 +1,4 @@
 package com.qa.pages;
-/**
- * This class has elements for the page which allows for a new user registration
- * Author : Pavan Kulkarni
- */
-
 import base.BasePage;
 import com.qa.util.TestUtil;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+/**
+ * This class has elements for the page which allows for a new user registration
+ * Author : Pavan Kulkarni
+ */
 
 public class RegisterPage extends BasePage {
     @FindBy(xpath="//h1[@data-test-registration-page-header]")
@@ -31,32 +30,32 @@ public class RegisterPage extends BasePage {
     @FindBy(xpath="//a[contains(@href,'recommendations')]")
     private WebElement viewRecos;
   
-/********************************************************************************************/    
+/********************************************************************************************/
 
-public RegisterPage() {
-    super();
-    PageFactory.initElements(driver, this);
-}
+    public RegisterPage() {
+        super();
+        PageFactory.initElements(driver, this);
+    }
 
-public String getRegisterPageHeader(){
-    return registerPageHeader.getText();
-}
-public void registerNewUser(String user,String pass) {
-	
-	email.sendKeys(user);
-	password.sendKeys(pass);
-	submit.click();
-}
+    public String getRegisterPageHeader(){
+        return registerPageHeader.getText();
+    }
 
-public String getSuccessMessage() {
-    return successMsg.getText();
-}
+    public void registerNewUser(String user,String pass) {
+        email.sendKeys(user);
+        password.sendKeys(pass);
+        submit.click();
+    }
 
-public SelectPolicyPage clickViewRecos() {
-    TestUtil.sleepNSeconds(2);
-    viewRecos.click();
-    return new SelectPolicyPage();
-}
+    public String getSuccessMessage() {
+        return successMsg.getText();
+    }
+
+    public SelectPolicyPage clickViewRecos() {
+        TestUtil.sleepNSeconds(2);
+        viewRecos.click();
+        return new SelectPolicyPage();
+    }
 
 
 }

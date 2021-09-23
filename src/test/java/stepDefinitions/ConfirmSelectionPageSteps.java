@@ -1,27 +1,20 @@
 package stepDefinitions;
-
 import com.qa.factory.DriverFactory;
 import com.qa.pages.ConfirmSelectionPage;
 import com.qa.pages.FinalContractsPage;
-import com.qa.pages.SelectPolicyPage;
-
-//import cucumber.api.java.en.Given;
-//import cucumber.api.java.en.Then;
-//import cucumber.api.java.en.When;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 
+/**
+ * This class invokes and validates the page elements for the Confirm Selection Page
+ * Author: Pavan Kulkarni
+ */
 public class ConfirmSelectionPageSteps {
 
 	ConfirmSelectionPage confirmSelection = new ConfirmSelectionPage();
 
 	@Given("^User is on Final Selection Page$")
 	public void user_is_confirm_policy_page(){
-		//SelectPolicyPage page= new SelectPolicyPage();
-		//confirmSelection = page.verifyConfirmSelectionPage("Private Altersvorsorge");
 		if(!confirmSelection.getPageHeader().contains("Private Altersvorsorge"))
 			throw new IllegalStateException("User not on the Confirm Selection Page");
 	}

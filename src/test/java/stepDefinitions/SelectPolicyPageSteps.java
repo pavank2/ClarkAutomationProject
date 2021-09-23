@@ -17,21 +17,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SelectPolicyPageSteps extends BasePage {
+public class SelectPolicyPageSteps {
 
 	//WebDriver driver = DriverFactory.getDriver();
 	SelectPolicyPage selectPolicyPage = new SelectPolicyPage();
 	
 	@Given("^User is on Select Policy Type Page$")
 	public void user_is_on_select_recommendations_page(){
-
-		//Adding extra conditions to make sure inline-ad is clicked
-		WebDriverWait wait = new WebDriverWait(driver, 15);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@class,'cucumber-modal-close')]")));
-		TestUtil.sleepNSeconds(3);
-		driver.findElement(By.xpath("//button[contains(@class,'cucumber-modal-close')]")).click();
-		WebElement selectRecosHeader = driver.findElement(By.xpath("//h1[contains(@class,'_hero-header_')]"));
-		String selectPolicyHeader = selectRecosHeader.getText();
+		selectPolicyPage.clickInlineAd();
+		String selectPolicyHeader = selectPolicyPage.getSelectPolicyHeader();
 
 		if(!selectPolicyHeader.equals("Unsere Empfehlungen für dich"))
 			throw new IllegalStateException("Not on Select Policy Types Page");

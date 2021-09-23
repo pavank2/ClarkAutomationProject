@@ -1,19 +1,20 @@
 package com.qa.pages;
 
-/**
- * This class has elements for the page which lists the final contract details
- * Author: Pavan Kulkarni
- */
+import com.qa.util.TestUtil;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import base.BasePage;
 
+/**
+ * This class has elements for the page which lists the final contract details
+ * Author: Pavan Kulkarni
+ */
+
 public class FinalContractsPage extends BasePage {
-    //private WebDriver driver;
     @FindBy(xpath = "//button[@data-test-product-card='standard']//div[@class='_title_niboal']")
     private WebElement insuranceType;
 
@@ -28,7 +29,6 @@ public class FinalContractsPage extends BasePage {
     public FinalContractsPage() {
         super();
         PageFactory.initElements(driver, this);
-        //this.driver = driver;
     }
 
     public WebElement getFinalContractsPageHeader() {
@@ -37,7 +37,10 @@ public class FinalContractsPage extends BasePage {
 
     // Verify contract details
     public void verifyContractDetails(String expectedPolicyType, String expectedCompany) {
-
+        TestUtil.sleepNSeconds(6);
+        ((JavascriptExecutor) driver)
+                .executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        TestUtil.sleepNSeconds(3);
         String insuranceName = insuranceType.getText();
         String companyName = insuranceCompany.getText();
 

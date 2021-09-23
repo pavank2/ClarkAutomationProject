@@ -1,12 +1,23 @@
 Clark Automation Project
-==============
+========================
+
+Summary
+--------
+-- The project has been implemented as a Maven Project in Selenium with Java.
+-- Cucumber/Gherkin has been used to implement the BDD feature file and Step Definitions.
+-- Page Object Model (POM) design pattern has been used in combination with Page Factory Design Pattern.
+-- OOP Principles have been used to optimize the code.
+-- log4j component has been added to generate logs wherever required.
+-- Extent Spark reporting has been incorporated. Reports are generated at the end of each execution (Details below).
+-- The Suite consists of 1 Feature File, 6 Scenarios and 32 Step Definitions and executes in ~ 1 min.
+-- However, "sleep" method has been added strategically to slow down execution deliberately for demo purposes.
 
 Prerequistes
 -------------
-Windows 10
-Java 15.0.2
-Apache Maven 3.8.2
-Chrome Browser  94.0.4606.54
+-- Windows 10
+-- Java 15.0.2
+-- Apache Maven 3.8.2
+-- Chrome Browser  94.0.4606.54
 
 Instructions to execute the Automation Suite
 ---------------------------------------------
@@ -18,12 +29,10 @@ Instructions to execute the Automation Suite
 5) On Windows command line, navigate to the project main folder where pom.xml is located.
 6) Execute "mvn clean install". This command will download the dependencies, build the project and execute too.
 Please be patient while the dependencies are getting downloaded for the first time, and keep your fingers crossed :-)
-7) You can check the status on the command line for all the Cucumber step definitions. (Please ignore the exception for Extent report pdf)
-8) You can also check the Spark HTML Reports at the test-output/SparkReport/Spark.html
+7) Once the build and run is successful, you can check the execution status for all the Cucumber step definitions on the command line.
+8) You can also check the Spark HTML Report at {project_home}/test-output/SparkReport/Spark.html
 
-*This will be Italic*
+*Note: If mvn clean install throws errors, please open the project in any IDE (IntelliJ/Eclipse/VS Code) and the IDE will download the dependencies. 
+You can also re-build the project.
+If nothing works, please feel free to contact me :-)
 
-**This will be Bold**
-
-- This will be a list item
-- This will be a list item

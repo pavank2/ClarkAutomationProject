@@ -5,12 +5,11 @@ import java.util.concurrent.TimeUnit;
 import com.qa.factory.DriverFactory;
 import com.qa.util.ConfigReader;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+//import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.support.PageFactory;
+//import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.qa.util.TestUtil;
-import com.qa.util.WebEventListener;
 
 public class BasePage {
 	DriverFactory driverFactory;

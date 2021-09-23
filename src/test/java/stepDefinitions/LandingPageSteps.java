@@ -9,15 +9,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 
-import java.util.Properties;
+/**
+ * This class invokes and tests page elements of the Clark Recommendation funnel Landing Page
+ * Author: Pavan Kulkarni
+ *
+ */
 
 public class LandingPageSteps{
 	BasePage base = new BasePage();
-//	private DriverFactory driverFactory;
-//	private WebDriver driver;
-//	private ConfigReader configReader;
-//	Properties prop;
-
 	LandingPage landingPage;
 
 	@Given("^Browser is launched$")

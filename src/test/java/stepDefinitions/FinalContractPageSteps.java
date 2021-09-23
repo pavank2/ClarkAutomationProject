@@ -1,19 +1,14 @@
 package stepDefinitions;
-
 import com.qa.factory.DriverFactory;
-import com.qa.pages.ConfirmSelectionPage;
 import com.qa.pages.FinalContractsPage;
-
-//import cucumber.api.java.en.Given;
-//import cucumber.api.java.en.Then;
-
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
+/**
+ * This class invokes and validates the elements of final contract Page.
+ * It also verifies if the final contract details are correct
+ * Author: Pavan Kulkarni
+ */
 public class FinalContractPageSteps {
 	FinalContractsPage finalContractsPage = new FinalContractsPage();
 
@@ -28,6 +23,7 @@ public class FinalContractPageSteps {
 	@Then("Verify Policy Details {string} and {string}")
 	public void verify_contract_details(String policyType,String company) {
 		finalContractsPage.verifyContractDetails(policyType,company);
+
 	}
 
 	@Then("Complete the Test")

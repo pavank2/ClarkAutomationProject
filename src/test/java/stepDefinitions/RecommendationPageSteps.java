@@ -2,18 +2,17 @@ package stepDefinitions;
 
 import com.qa.factory.DriverFactory;
 import com.qa.pages.RecommendationPage;
-
-//import cucumber.api.java.en.Then;
-//import cucumber.api.java.en.When;
-
 import com.qa.pages.RegisterPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+/**
+ * This class invokes and validates the page elements of the Recommendation requirements gathered from the user
+ * Author: Pavan Kulkarni
+ */
 public class RecommendationPageSteps {
 	RecommendationPage recommendationPage = new RecommendationPage();
-	//LandingPage landingPage;
 	
 	@Given("^User is on Recommendations Page$")
 	public void user_is_on_Recommendation_Page() throws Throwable {

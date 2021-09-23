@@ -15,7 +15,6 @@ import base.BasePage;
  */
 public class ConfirmSelectionPage extends BasePage {
 
-   // private WebDriver driver;
     @FindBy(css = "[data-cucumber-selection-search='input']")
     private WebElement searchBar;
 
@@ -42,7 +41,6 @@ public class ConfirmSelectionPage extends BasePage {
     public ConfirmSelectionPage() {
         super();
         PageFactory.initElements(driver, this);
-       // this.driver = driver;
     }
 
     public void selectNatureOfPolicy() {

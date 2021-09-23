@@ -4,7 +4,6 @@ import com.qa.util.TestUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.util.concurrent.TimeUnit;
@@ -12,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 public class DriverFactory {
 
     public WebDriver driver;
-
     public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
 
     /**
@@ -32,8 +30,6 @@ public class DriverFactory {
         }else{
                 System.out.println("Please pass the correct browser value: " + browser);
             }
-
-
             return getDriver();
 
         }

@@ -1,24 +1,21 @@
 package stepDefinitions;
-
-import com.qa.factory.DriverFactory;
 import com.qa.pages.RegisterPage;
-
 import base.BasePage;
-//import cucumber.api.java.en.Then;
-//import cucumber.api.java.en.When;
-
 import com.qa.pages.SelectPolicyPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import com.qa.util.TestUtil;
 
+/**
+ * This class invokes and validates the page elements for the new user registration
+ * Author: Pavan Kulkarni
+ */
 public class RegisterUserPageSteps extends BasePage {
   
 	RegisterPage registerPage = new RegisterPage();
 
 	@When("^User is on Registration Page$")
 	public void verify_user_on_registerPage(){
-		//String registerPageheader = driver.findElement(By.xpath("//h1[@data-test-registration-page-header]")).getText();
 	    if(!registerPage.getRegisterPageHeader().equals("Sichere deinen Fortschritt"))
            throw new IllegalStateException("Not navigated to Registration Page");
 		
