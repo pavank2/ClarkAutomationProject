@@ -34,7 +34,9 @@ Please be patient while the dependencies are getting downloaded for the first ti
    To execute from IDE, run "src/test/java/myRunner/RunnerTest.java" as JUnit Test.
 10) You can also check the Spark HTML Report at {project_home}/test-output/SparkReport/Spark.html
 
-**Note**: If mvn clean install throws errors, please open the project in any IDE (IntelliJ/Eclipse/VS Code) and the IDE will download the dependencies. 
+**Note**: 
+1) If mvn clean install throws errors, please open the project in any IDE (IntelliJ/Eclipse/VS Code) and the IDE will download the dependencies. 
 You may also need to re-build the project on the IDE.
+2) Clark Recommendation funnel redirects to User login page sometimes when you hit the URL. If this happens, please stop the test, close the browser and restart test.
 If nothing works, please feel free to contact me :-)
 
