@@ -16,6 +16,7 @@ import org.openqa.selenium.WebDriver;
  */
 
 public class LandingPageSteps{
+
 	BasePage base = new BasePage();
 	LandingPage landingPage;
 

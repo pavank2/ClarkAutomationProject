@@ -14,7 +14,6 @@ import io.cucumber.java.en.Then;
  */
 public class SelectPolicyPageSteps {
 
-	//WebDriver driver = DriverFactory.getDriver();
 	SelectPolicyPage selectPolicyPage = new SelectPolicyPage();
 	
 	@Given("^User is on Select Policy Type Page$")
