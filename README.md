@@ -30,7 +30,9 @@ Instructions to execute the Automation Suite
 6) Execute "mvn clean install". This command will download the dependencies, build the project and execute too.
 Please be patient while the dependencies are getting downloaded for the first time, and keep your fingers crossed :-)
 7) Once the build and run is successful, you can check the execution status for all the Cucumber step definitions on the command line.
-8) You can also check the Spark HTML Report at {project_home}/test-output/SparkReport/Spark.html
+8) Project can also be executed from any IDE (assuming dependencies get resolved successfully. 
+   To execute from IDE, run "src/test/java/myRunner/RunnerTest.java" as JUnit Test.
+10) You can also check the Spark HTML Report at {project_home}/test-output/SparkReport/Spark.html
 
 **Note**: If mvn clean install throws errors, please open the project in any IDE (IntelliJ/Eclipse/VS Code) and the IDE will download the dependencies. 
 You may also need to re-build the project on the IDE.
