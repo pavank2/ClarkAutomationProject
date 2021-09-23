@@ -33,6 +33,6 @@ Please be patient while the dependencies are getting downloaded for the first ti
 8) You can also check the Spark HTML Report at {project_home}/test-output/SparkReport/Spark.html
 
 **Note**: If mvn clean install throws errors, please open the project in any IDE (IntelliJ/Eclipse/VS Code) and the IDE will download the dependencies. 
-You can also re-build the project.
+You may also need to re-build the project on the IDE.
 If nothing works, please feel free to contact me :-)
 
