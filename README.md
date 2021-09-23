@@ -17,7 +17,7 @@ Prerequistes
 - Windows 10
 - Java 15.0.2
 - Apache Maven 3.8.2
-- Chrome Browser  94.0.4606.54
+- Chrome Browser  94.0.4606.54 (Preferred) or FireFox 78.14
 
 Instructions to execute the Automation Suite
 ---------------------------------------------
