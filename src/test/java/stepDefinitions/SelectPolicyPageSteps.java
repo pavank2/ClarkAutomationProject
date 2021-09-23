@@ -4,19 +4,14 @@ import base.BasePage;
 import com.qa.factory.DriverFactory;
 import com.qa.pages.ConfirmSelectionPage;
 import com.qa.pages.SelectPolicyPage;
-
-//import cucumber.api.java.en.Then;
-//import cucumber.api.java.en.When;
-
-import com.qa.util.TestUtil;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
+/**
+ * This class invokes and validates page elements for the page where user selects
+ * the Recommended Insurance Policy card
+ * Author: Pavan Kulkarni
+ */
 public class SelectPolicyPageSteps {
 
 	//WebDriver driver = DriverFactory.getDriver();
