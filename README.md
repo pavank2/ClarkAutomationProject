@@ -1,4 +1,4 @@
-Clark Automation Project
+Selenium Automation Project
 ========================
 
 Summary
@@ -10,7 +10,6 @@ Summary
 - log4j component has been added to generate logs wherever required.
 - Extent Spark reporting has been incorporated. Reports are generated at the end of each execution (Details below).
 - The Suite consists of 1 Feature File, 6 Scenarios and 32 Step Definitions and executes in < 1 min.
-  However, "sleep" method has been added strategically to slow down execution deliberately for demo purposes.
 
 Prerequistes
 -------------
@@ -33,10 +32,4 @@ Please be patient while the dependencies are getting downloaded for the first ti
 8) Project can also be executed from any IDE (assuming dependencies get resolved successfully. 
    To execute from IDE, run "src/test/java/myRunner/RunnerTest.java" as JUnit Test.
 10) You can also check the Spark HTML Report at {project_home}/test-output/SparkReport/Spark.html
-
-**Note**: 
-1) If mvn clean install throws errors, please open the project in any IDE (IntelliJ/Eclipse/VS Code) and the IDE will download the dependencies. 
-You may also need to re-build the project on the IDE.
-2) Clark Recommendation funnel redirects to User login page sometimes when you hit the URL. If this happens, please stop the test, close the browser and restart test.
-If nothing works, please feel free to contact me :-)
 
